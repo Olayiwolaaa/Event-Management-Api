@@ -17,12 +17,12 @@ class EventFactory extends Factory
     public function definition(): array
     {
         return [
-            'name' => fake()->text(20),
+            'name' => fake()->text(50),
             'is_public' => fake()->boolean(),
             'description' => fake()->text(100),
             'location' => fake()->text(50),
-            'starting_date' => now(),
-            'ending_date' => now()->addDays(rand(1, 10)),
+            'starting_date' => date_format(now(), 'Y-m-d'),
+            'ending_date' => date_format(now()->addDays(rand(1, 10)), 'Y-m-d'),
             'ticket_price' => fake()->randomFloat(2, 10, 999),
             'ticket_available' => rand(5, 20)
         ];

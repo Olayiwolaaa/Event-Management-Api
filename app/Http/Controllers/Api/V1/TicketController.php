@@ -13,6 +13,7 @@ class TicketController extends Controller
     public function index(Event $event)
     {
         $tickets =  $event->tickets()
+            ->orderBy('type')
             ->paginate();
         
         return TicketResource::collection($tickets);

@@ -4,12 +4,27 @@ namespace Tests\Feature;
 
 use App\Models\Event;
 use Illuminate\Foundation\Testing\RefreshDatabase;
-use Illuminate\Foundation\Testing\WithFaker;
 use Tests\TestCase;
 
 class EventsListTest extends TestCase
 {
     use RefreshDatabase;
+
+    public function test_creating_an_event(): void
+    {
+        $event = Event::factory()->make()->toArray();
+
+        $response = $this->postJson('/api/v1/events', $event);
+        $response->assertStatus(201);
+    }
+    
+    public function test_all_events(): void
+    {
+        Event::factory()->count(100)->create();
+
+        $response = $this->get('/api/v1/events');
+        $response->assertStatus(200);
+    }
 
     public function test_events_list_returns_paginated_data_correctly(): void
     {
