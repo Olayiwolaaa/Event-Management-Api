@@ -21,6 +21,8 @@ class EventFactory extends Factory
             'is_public' => fake()->boolean(),
             'description' => fake()->text(100),
             'location' => fake()->text(50),
+            'starting_date' => now(),
+            'ending_date' => now()->addDays(rand(1, 10)),
             'ticket_price' => fake()->randomFloat(2, 10, 999),
             'ticket_available' => rand(5, 20)
         ];

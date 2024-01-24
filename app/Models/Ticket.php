@@ -12,7 +12,7 @@ class Ticket extends Model
     use HasFactory, HasUuids;
 
     protected $fillable = [
-        'type', 'price', 'quantity_available'
+        'event_id', 'type', 'price', 'quantity_available'
     ];
 
     public function event(): BelongsTo

@@ -20,6 +20,8 @@ class EventResource extends JsonResource
             'slug' => $this->slug,
             'description' => $this->description,
             'location' => $this->location,
+            'starting_date' => $this->starting_date,
+            'ending_date' => $this->ending_date,
             'ticket_available' => $this->ticket_available,
             'ticket_price' => $this->ticket_price
         ];

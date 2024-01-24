@@ -18,6 +18,8 @@ return new class extends Migration
             $table->string('name');
             $table->text('description');
             $table->string('location');
+            $table->date('starting_date');
+            $table->date('ending_date');
             $table->integer('ticket_price');
             $table->integer('ticket_available');
             $table->timestamps();

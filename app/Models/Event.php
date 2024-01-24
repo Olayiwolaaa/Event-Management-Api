@@ -14,8 +14,8 @@ class Event extends Model
     use HasFactory, Sluggable, HasUuids;
 
     protected $fillable = [
-        'is_public', 'slug', 'name', 'description',
-        'location', 'ticket_price', 'ticket_available'
+        'is_public', 'slug', 'name', 'description', 'starting_date',
+        'ending_date', 'location', 'ticket_price', 'ticket_available'
     ];
 
     public function tickets(): HasMany

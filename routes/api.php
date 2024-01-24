@@ -3,6 +3,7 @@
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Api\V1\EventController;
+use App\Http\Controllers\Api\V1\TicketController;
 
 /*
 |--------------------------------------------------------------------------
@@ -20,3 +21,4 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 });
 
 Route::get('events', [EventController::class, 'index']);
+Route::get('events/{event:slug}/ticket', [TicketController::class, 'index']);
